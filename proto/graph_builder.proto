@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package graphbuilder;
+
+service GraphBuilder {
+	// Adds a edge between 2 urls in the web graph
+	rpc AddEdge (Edge) returns (Result) {}
+}
+
+message Edge {
+	string source = 1;
+	string destination = 2;
+}
+
+message Result {
+	bool status = 1;
+}
