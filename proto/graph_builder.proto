@@ -13,5 +13,5 @@ message Edge {
 }
 
 message Result {
-	bool status = 1;
+	int32 status = 1;
 }
