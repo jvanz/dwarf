@@ -2,3 +2,5 @@
 out.json
 scraper/scraper/graph_builder_pb2.py
 scraper/scraper/graph_builder_pb2_grpc.py
+dist
+k9_scraper.egg-info
