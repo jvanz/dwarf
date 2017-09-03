@@ -12,5 +12,5 @@ setup(
     author_email="guilherme.sft@gmail.com",
     url="https://github.com/jvanz/k9",
     packages=find_packages(),
-    requires=requires
+    install_requires=requires
 )
