@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Install python build dependencies
-          command: pip install requirements.txt
+          command: pip install --user grpcio grpcio-tools
       - run:
           name: Compile proto files
           command: make compile-protos
