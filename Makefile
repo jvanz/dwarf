@@ -6,5 +6,5 @@ scraper-image:
 dist-scraper:
 	python ./scraper/setup.py sdist
 
-protos:
+compile-protos:
 	python -m grpc_tools.protoc -Iproto --python_out=./proto --grpc_python_out=./proto proto/graph_builder.proto

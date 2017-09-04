@@ -9,5 +9,10 @@ jobs:
                 steps:
                         - checkout
                         - run:
+                                name: Compile proto files
+                                command: |
+                                        make compile-protos
+                        - run:
+                                name: Build scraper container image
                                 command: |
                                         make scraper-image
