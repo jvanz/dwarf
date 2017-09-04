@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install build dependencies
-          command: python3 install -f requirements.txt
+          command: python install -f requirements.txt
       - run:
           name: Compile proto files
           command: make compile-protos
