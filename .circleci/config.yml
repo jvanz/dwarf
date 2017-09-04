@@ -1,1 +1,13 @@
 version: 2
+branches:
+        only:
+                - master
+jobs:
+        build:
+                machine: true
+                working_directory: ~/k9
+                steps:
+                        - checkout
+                        - run:
+                                command: |
+                                        make scraper-image
