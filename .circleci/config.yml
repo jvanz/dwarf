@@ -3,16 +3,31 @@ branches:
         only:
                 - master
 jobs:
+        compile-protos:
+                steps:
+                        - checkout
+                        - run:
+                                name: Install build dependencies
+                                command: python3 install -f requirements.txt
+                        - run:
+                                name: Compile proto files
+                                command: |
+                                        make compile-protos
         build:
                 machine: true
                 working_directory: ~/k9
                 steps:
                         - checkout
                         - run:
-                                name: Compile proto files
-                                command: |
-                                        make compile-protos
-                        - run:
                                 name: Build scraper container image
                                 command: |
                                         make scraper-image
+
+workflows:
+        version: 2
+        build-workflow:
+                jobs:
+                        - compile-protos
+                        - build:
+                                requires
+                                        - compile-protos
