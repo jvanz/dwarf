@@ -1,4 +1,6 @@
 version: 2
+
+
 jobs:
   "compile-protos":
     machine: true
@@ -6,20 +8,19 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install build dependencies
-        command: python3 install -f requirements.txt
+          name: Install build dependencies
+          command: python3 install -f requirements.txt
       - run:
-        name: Compile proto files
-        command: |
-          make compile-protos
+          name: Compile proto files
+          command: make compile-protos
   "scraper-image":
     machine: true
     working_directory: ~/k9
     steps:
       - checkout
       - run:
-        name: Build scraper container image
-        command: make scraper-image
+          name: Build scraper container image
+          command: make scraper-image
 
 workflows:
   version: 2
