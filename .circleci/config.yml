@@ -3,10 +3,12 @@ version: 2
 jobs:
   build:
     working_directory: ~/k9
-    docker:
-      - image: circleci/python:3.6.1
+    machine: true
     steps:
       - checkout
+      - run:
+          name: Install docker
+          command: sudo apt-get install docker-ce
       - run:
           name: Install python build dependencies
           command: pip install --user grpcio grpcio-tools
