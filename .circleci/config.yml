@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Install python build dependencies
-          command: pip install -f requirements.txt
+          command: pip install requirements.txt
       - run:
           name: Compile proto files
           command: make compile-protos
