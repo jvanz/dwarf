@@ -1,6 +1,6 @@
 version: 2
 jobs:
-        compile-protos:
+        "compile-protos":
                 machine: true
                 working_directory: ~/k9
                 steps:
@@ -12,7 +12,7 @@ jobs:
                                 name: Compile proto files
                                 command: |
                                         make compile-protos
-        scraper-image:
+        "scraper-image":
                 machine: true
                 working_directory: ~/k9
                 steps:
@@ -24,9 +24,9 @@ jobs:
 
 workflows:
         version: 2
-        scraper:
+        build:
                 jobs:
-                        - compile-protos
-                        - scraper-image:
+                        - "compile-protos"
+                        - "scraper-image":
                                 requires
-                                        - compile-protos
+                                        - "compile-protos"
