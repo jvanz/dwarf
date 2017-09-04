@@ -1,8 +1,7 @@
 version: 2
 
-
 jobs:
-  compile-protos:
+  build:
     machine: true
     working_directory: ~/k9
     steps:
@@ -13,34 +12,7 @@ jobs:
       - run:
           name: Compile proto files
           command: make compile-protos
-  build:
-    machine: true
-    working_directory: ~/k9
-    steps:
-      - checkout
       - run:
           name: Build scraper container image
           command: make scraper-image
-  publish:
-    machine: true
-    working_directory: ~/k9
-    steps:
-      - run:
-          name: Publish container image
-          command: echo "Published!"
 
-
-workflows:
-  version: 2
-  build-and-publish:
-    jobs:
-      - compile-protos
-      - build:
-        requires:
-          - compile-protos
-      - publish:
-          requires:
-            - build
-          filters:
-          branches:
-            only: master
