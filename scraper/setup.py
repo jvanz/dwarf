@@ -5,12 +5,12 @@ from setuptools import setup, find_packages
 requires = ["scrapy"]
 
 setup(
-    name="k9-scraper",
+    name="dwarf-scraper",
     version="0.1",
-    description="k9-scraper",
+    description="dwarf-scraper",
     author="Jose Guilherme Vanz",
     author_email="guilherme.sft@gmail.com",
-    url="https://github.com/jvanz/k9",
+    url="https://github.com/jvanz/dwarf",
     packages=find_packages(),
     install_requires=requires
 )
