@@ -1,7 +1,7 @@
 .PHONY: dist-scraper
 
 scraper-image:
-	docker build --tag guilhermesft/k9-scraper:latest --file scraper/Dockerfile scraper
+	docker build --tag guilhermesft/dwarf-scraper:$(CIRCLE_BUILD_NUM) --file scraper/Dockerfile scraper
 
 dist-scraper:
 	python ./scraper/setup.py sdist
