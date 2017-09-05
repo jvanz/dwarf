@@ -16,9 +16,8 @@ jobs:
           name: Build scraper container image
           command: make scraper-image
       - run:
-          name: Login into docker hub
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
           name: Publish scraper container image
-          command: docker push guilhermesft/k9-scraper:latest
+          command: |
+              docker login -u $DOCKER_USER -p $DOCKER_PASS
+              docker push docker.io/guilhermesft/k9-scraper:latest
 
