@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/k9
+    working_directory: ~/dwarf
     machine: true
     steps:
       - checkout
@@ -19,5 +19,5 @@ jobs:
           name: Publish scraper container image
           command: |
               docker login -u $DOCKER_USER -p $DOCKER_PASS
-              docker push docker.io/guilhermesft/k9-scraper:latest
+              docker push docker.io/guilhermesft/dwarf-scraper:$CIRCLE_BUILD_NUM
 
