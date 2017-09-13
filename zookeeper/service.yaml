@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: zookeeper-service
+spec:
+  selector:
+    app: zookeeper
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 2181
+
