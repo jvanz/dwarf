@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Chart.Name }}-service
+spec:
+  selector:
+    app: zookeeper
+  ports:
+    - protocol: TCP
+      port: {{ .Values.listenport }}
+      targetPort: {{ .Values.listenport }}
+
