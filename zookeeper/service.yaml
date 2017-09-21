@@ -7,6 +7,6 @@ spec:
     app: zookeeper
   ports:
     - protocol: TCP
-      port: 8080
+      port: 2181
       targetPort: 2181
 
