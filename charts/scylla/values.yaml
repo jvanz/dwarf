@@ -1,0 +1,10 @@
+listenport: 9042
+image:
+  repository: scylladb/scylla
+  tag: 1.7.4
+deployment:
+  name: scylladb-deploy
+service:
+  name: scylladb-service
+  type: ClusterIP
+label: scylladb
