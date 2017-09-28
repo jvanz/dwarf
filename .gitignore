@@ -1,6 +1,8 @@
 *.pyc
 out.json
-graph_builder_pb2.py
-graph_builder_pb2_grpc.py
 dist
 k9_scraper.egg-info
+web_graph/build
+web_graph.egg-info
+web_graph_pb2.py
+web_graph_pb2_grpc.py
