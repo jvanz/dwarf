@@ -7,8 +7,8 @@
 
 import grpc
 
-import graph_builder_pb2 as gb
-import graph_builder_pb2_grpc as gb_grpc
+import web_graph_pb2 as gb
+import web_graph_pb2_grpc as gb_grpc
 
 
 class SendToGraphBuilder(object):
