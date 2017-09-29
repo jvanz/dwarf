@@ -4,7 +4,7 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 
 class LinkSpider(scrapy.Spider):
-    name = "link-spider"
+    name = "link"
     link_extractor = LinkExtractor()
     start_urls = [ "http://google.com" ]
 
