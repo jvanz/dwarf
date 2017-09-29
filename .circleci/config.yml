@@ -13,8 +13,18 @@ jobs:
           name: Build scraper container image
           command: make scraper-image
       - run:
-          name: Publish scraper container image
+          name: Build web graph builder container image
+          command: make web-graph-image
+      - run:
+          name: Login docker hub
           command: |
               docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Publish scraper container image
+          command: |
               docker push docker.io/guilhermesft/dwarf-scraper:latest
+      - run:
+          name: Publish web graph builder container image
+          command: |
+              docker push docker.io/guilhermesft/dwarf-web-graph-builder:latest
 
