@@ -1,11 +1,5 @@
-.PHONY: dist-scraper
 
-scraper-image: compile-protos
-	docker build --tag guilhermesft/dwarf-scraper:$(CIRCLE_BUILD_NUM) --file scraper/Dockerfile scraper
-
-dist-scraper:
-	python ./scraper/setup.py sdist
-
-compile-protos:
-	python -m grpc_tools.protoc -Iweb_graph --python_out=./web_graph/web_graph\
-		--grpc_python_out=./web_graph/web_graph web_graph/web_graph.proto
+scraper-image:
+	python -m grpc_tools.protoc -Iproto --python_out=./scraper\
+		--grpc_python_out=./scraper/ proto/web_graph.proto
+	docker build --tag guilhermesft/dwarf-scraper:latest --file scraper/Dockerfile scraper
