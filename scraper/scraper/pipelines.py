@@ -16,7 +16,7 @@ class SendToGraphBuilder(object):
 
     def __init__(self):
         self.channel = grpc.insecure_channel("localhost:50051")
-        self.stub = gb_grpc.GraphBuilderStub(self.channel)
+        self.stub = gb_grpc.WebGraphStub(self.channel)
 
     def process_item(self, item, spider):
         response = self.stub.AddEdge(gb.Edge(source=item["source"], destination=item["destination"]))
